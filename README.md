@@ -1,0 +1,1 @@
+# covid19-norway-map
