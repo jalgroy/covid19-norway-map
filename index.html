@@ -8,9 +8,12 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 </head>
 <body>
-    <div id="bar"><!--span id="question" onclick="showHelp()" display="hidden">?</span-->Spredning av koronavirus i Norge</div>
+    <div id="bar"><span id="question" onclick="showHelp()">?</span>Spredning av koronavirus i Norge</div>
     <div id="help" class="hidden">
-        <h1>FAQ<a href="#" onclick="hideHelp()" id="closehelp">Close</a></h1>
+        <h1>Hva er dette?<a href="#" onclick="hideHelp()" id="closehelp">Close</a></h1>
+        <p>Kartet viser totalt antall smittede med koronavirus per fylke. <br><br>
+        Data kommer fra folkehelseinstituttets daglige oppdateringer.
+        Disse kommer ut kl. 18, og jeg prøver å oppdatere så snart som mulig etter det.</p>
     </div>
     <div id="map">
         <span id="date"></span>

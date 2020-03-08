@@ -100,3 +100,12 @@ a, a:active, a:hover, a:visited {
 .table-label::before{
     border: 0;
 }
+
+.restart{
+    border: 0;
+    box-shadow: 0 0 0;
+}
+.restart img {
+    width: 20px;
+    cursor: pointer;
+}

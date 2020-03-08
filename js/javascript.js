@@ -134,6 +134,16 @@ function setDay(d){
     let infoMarker = new L.marker([62,15.5], { opacity: 0 }); 
     infoMarker.bindTooltip(tableHtml, {permanent: true, className: "table-label", offset: [0, 0] });
     infoMarker.addTo(map);
+
+    // Add reastart icon
+    let restartMarker = new L.marker([65.2,4], { opacity: 0 });
+    let restartTooltip = L.tooltip( {permanent: true, className: "restart", offset: [0, 0] });
+    restartTooltip.setContent("<img src='img/restart.png' onclick='restart()'/>");
+    restartMarker.bindTooltip(restartTooltip);
+    restartMarker.addTo(map);
+    let tEl = restartTooltip.getElement();
+    tEl.style.pointerEvents = "auto";
+    tEl.addEventListener('click', restart);
 }
 
 
@@ -152,4 +162,24 @@ function updateDay(){
     }
     setDay(day);
     console.log(Date.now()/1000);
+}
+
+function restart(){
+    clearInterval(animation);
+    day = 0;
+    setDay(0);
+    animation = setInterval(updateDay, 1000);
+}
+
+function showHelp() {
+    document.getElementById("help").style.display = "block";
+    setTimeout(function(){
+    document.getElementById("help").className = "visible";
+    },10);
+}
+function hideHelp() {
+    document.getElementById("help").className = "hidden";
+    setTimeout(function(){
+        document.getElementById("help").style.display = "none";
+    },1000);
 }
