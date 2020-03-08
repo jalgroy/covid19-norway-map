@@ -117,7 +117,7 @@ function setDay(d){
         map.remove();
     }
     // Build map
-    map = L.map('map', { zoomControl: false, scrollWheelZoom: false, doubleClickZoom: false, dragging: false, touchZoom: false});
+    map = L.map('map', {zoomSnap: 0.1, zoomControl: false, scrollWheelZoom: false, doubleClickZoom: false, dragging: false, touchZoom: false});
     geojson = L.geoJson(fylker, {
         style: style,
         onEachFeature: onEachFeature
