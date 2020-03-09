@@ -156,4 +156,17 @@ var data = [
         "50": 19, // Trøndelag
         "54": 6, // Troms og Finnmark
     },
+    {
+        "03": 35, // Oslo
+        "11": 26, // Rogaland
+        "15": 2, // Møre og Romsdal
+        "18": 3, // Nordland
+        "30": 44, // Viken
+        "34": 13, // Innlandet
+        "38": 4, // Vestfold og Telemark
+        "42": 12, // Agder
+        "46": 26, // Vestland
+        "50": 21, // Trøndelag
+        "54": 6, // Troms og Finnmark
+    },
 ]
