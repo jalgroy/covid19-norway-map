@@ -171,7 +171,7 @@ var data = [
     },
     {
         "03": 51, // Oslo
-        "11": 34, // Rogaland
+        "11": 33, // Rogaland
         "15": 5, // Møre og Romsdal
         "18": 3, // Nordland
         "30": 86, // Viken
