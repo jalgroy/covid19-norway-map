@@ -109,3 +109,11 @@ a, a:active, a:hover, a:visited {
     width: 20px;
     cursor: pointer;
 }
+.skip{
+    border: 0;
+    box-shadow: 0 0 0;
+}
+.skip img {
+    width: 20px;
+    cursor: pointer;
+}

@@ -126,8 +126,8 @@ function setDay(d){
 
     // Add date
     let date = dateToString(dateZero.addDays(d));
-    let dateMarker = new L.marker([66,1], { opacity: 0 });
-    dateMarker.bindTooltip(date, {permanent: true, className: "date-label", offset: [0, 0] });
+    let dateMarker = new L.marker([65,6.5], { opacity: 0 });
+    dateMarker.bindTooltip(date, {direction: 'top', permanent: true, className: "date-label", offset: [0, 0] });
     dateMarker.addTo(map);
 
     // Add data:
@@ -136,14 +136,24 @@ function setDay(d){
     infoMarker.addTo(map);
 
     // Add reastart icon
-    let restartMarker = new L.marker([65.2,4], { opacity: 0 });
-    let restartTooltip = L.tooltip( {permanent: true, className: "restart", offset: [0, 0] });
+    let restartMarker = new L.marker([64.3,5.5], { opacity: 0 });
+    let restartTooltip = L.tooltip( {direction: 'top', permanent: true, className: "restart", offset: [0, 0] });
     restartTooltip.setContent("<img src='img/restart.png' onclick='restart()'/>");
     restartMarker.bindTooltip(restartTooltip);
     restartMarker.addTo(map);
-    let tEl = restartTooltip.getElement();
-    tEl.style.pointerEvents = "auto";
-    tEl.addEventListener('click', restart);
+    let rtEl = restartTooltip.getElement();
+    rtEl.style.pointerEvents = "auto";
+    rtEl.addEventListener('click', restart);
+
+    // Add skip icon
+    let skipMarker = new L.marker([64.3,7.5], { opacity: 0 });
+    let skipTooltip = L.tooltip( {direction: 'top', permanent: true, className: "skip", offset: [0, 0] });
+    skipTooltip.setContent("<img src='img/skip.png' onclick='skip()'/>");
+    skipMarker.bindTooltip(skipTooltip);
+    skipMarker.addTo(map);
+    let stEl = skipTooltip.getElement();
+    stEl.style.pointerEvents = "auto";
+    stEl.addEventListener('click', skip);
 }
 
 
@@ -169,6 +179,12 @@ function restart(){
     day = 0;
     setDay(0);
     animation = setInterval(updateDay, 1000);
+}
+
+function skip(){
+    clearInterval(animation);
+    day = data.length-1;
+    setDay(day);
 }
 
 function showHelp() {
