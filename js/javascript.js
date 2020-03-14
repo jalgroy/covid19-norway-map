@@ -87,10 +87,16 @@ function highlightFeature(e) {
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
     }
+
+    //also highlight the place name in the table
+    highlightTableRow(layer);
 }
 
 function resetHighlight(e) {
     geojson.resetStyle(e.target);
+
+    //remove highlight from the place name in the table   
+    resetTableHighlight();
 }
 
 function onEachFeature(feature, layer) {
@@ -107,7 +113,7 @@ function setDay(d){
     let sum = 0;
     for (let fn in data[d]) {
         fylker["features"][fnToInd(fn)]["properties"]["infected"] = data[d][fn];
-        tableHtml += "<tr><td>";
+        tableHtml += "<tr class='fylke-" + parseInt(fn) + "'><td>";
         tableHtml += fylker["features"][fnToInd(fn)]["properties"]["navn"];
         tableHtml += "</td><td class='numinf'>" + data[d][fn] + "</td></tr>";
         sum += data[d][fn];
@@ -198,4 +204,18 @@ function hideHelp() {
     setTimeout(function(){
         document.getElementById("help").style.display = "none";
     },1000);
+}
+
+
+function highlightTableRow(layer) {
+    var fylkesnummer = layer.feature.properties.fylkesnummer;
+    document.getElementsByClassName('fylke-'+fylkesnummer)[0].className += ' highlight';
+}
+
+function resetTableHighlight() {
+    var elements = document.getElementsByClassName('highlight');
+    for (var i in elements) {
+        if (!elements.hasOwnProperty(i)) continue;
+        elements[i].className = elements[i].className.replace( /(?:^|\s)highlight(?!\S)/g , '' );        
+    }
 }
