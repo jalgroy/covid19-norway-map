@@ -90,8 +90,17 @@ a, a:active, a:hover, a:visited {
 .table-label {
     font-size: 16px;
 }
+
+.table-label table {
+    border-collapse: collapse;
+}
+
 .table-label th {
     text-align: left;
+}
+
+.table-label td {
+    padding: 3px;
 }
 
 .table-label td.numinf {
@@ -116,4 +125,8 @@ a, a:active, a:hover, a:visited {
 .skip img {
     width: 20px;
     cursor: pointer;
+}
+
+tr.highlight {
+    background-color: #CCDDCC;
 }
