@@ -403,4 +403,30 @@ var data = [
         "50": 261, // Trøndelag
         "54": 116, // Troms og Finnmark
     },
+    {
+        "03": 989, // Oslo
+        "11": 304, // Rogaland
+        "15": 80, // Møre og Romsdal
+        "18": 42, // Nordland
+        "30": 1048, // Viken
+        "34": 228, // Innlandet
+        "38": 149, // Vestfold og Telemark
+        "42": 159, // Agder
+        "46": 436, // Vestland
+        "50": 281, // Trøndelag
+        "54": 129, // Troms og Finnmark
+    },
+    {
+        "03": 1118, // Oslo
+        "11": 305, // Rogaland
+        "15": 81, // Møre og Romsdal
+        "18": 46, // Nordland
+        "30": 1107, // Viken
+        "34": 246, // Innlandet
+        "38": 154, // Vestfold og Telemark
+        "42": 161, // Agder
+        "46": 445, // Vestland
+        "50": 296, // Trøndelag
+        "54": 143, // Troms og Finnmark
+    },
 ]
