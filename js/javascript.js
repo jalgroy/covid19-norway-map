@@ -168,7 +168,7 @@ var map;
 setDay(0);
 
 var day = 0;
-var animation = setInterval(updateDay, 1000);
+var animation = setInterval(updateDay, 500);
 
 function updateDay(){
     day++;
